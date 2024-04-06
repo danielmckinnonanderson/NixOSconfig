@@ -10,7 +10,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "nixstation"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -99,6 +99,7 @@
     packages = with pkgs; [
       # Applications
       steam
+      firefox
       brave
 
       # Window manager
@@ -114,9 +115,6 @@
       xclip # To cut / paste to system clipboard from editor
 
       libgcc # C / C++ compiler
-      clang
-      clang-tools
-      gcc13
 
       # Utilities
       htop
@@ -130,7 +128,7 @@
   };
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "Iosevka" ]; })
+    (nerdfonts.override { fonts = [ "Iosevka" ]; })
   ];
 
   # Allow unfree packages
